@@ -1,0 +1,565 @@
+@use 'sass:color';
+@use 'sass:map';
+@use "sass:meta";
+
+//    ------------------------------------------------------
+//    Colors (顏色系統)
+//    ------------------------------------------------------ 
+
+$colors: (
+    // 基本色
+    'white': #ffffff,
+    'black': #000000,
+
+    // 灰階系統（Gray Scale）
+    'gray': ('50': #f8f9fa, // 極淺灰，常用於背景
+        '100': #edf2f7, // 淺灰，hover 效果或背景色
+        '200': #e2e8f0, // 較淺灰，邊框或分割線
+        '300': #cbd5e0, // 中淺灰，次要邊框
+        '400': #a0aec0, // 常用於佔位符文字或次要圖標
+        '500': #718096, // 中灰，常用於次要文字或非活躍狀態
+        '600': #4a5568, // 較深灰，常用於主要文字或圖標
+        '700': #2d3748, // 深灰，主要標題或圖標
+        '800': #1a202c, // 極深灰，接近黑色
+        '900': #171923 // 最深灰，與純黑區分
+    ),
+
+    // 主題色系（Theme Colors）
+    // 紫藍色
+    'primary': #667eea,
+    'primary-hover': #7c92f5,
+    // 紫色（輔助色）
+    'secondary': #764ba2,
+    'secondary-hover': #8b5cb8,
+
+    // 狀態色系（State Colors）
+    'success': #48bb78,
+    // 成功、完成
+    'warning': #ed8936,
+    // 警告、注意
+    'danger': #f56565,
+    // 錯誤、警示
+    'info': #4299e1,
+    // 提示、資訊
+
+    // 特效色（Effects）
+    'shadow': rgba(0, 0, 0, 0.1),
+    // 陰影
+    'overlay': rgba(0, 0, 0, 0.4) // 遮罩
+);
+
+// 主題漸層 (由於這是 CSS 語法，直接作為獨立變數或在 dedicated map 中)
+$gradient-primary: linear-gradient(135deg, map.get($colors, 'primary') 0%, map.get($colors, 'secondary') 100%);
+$gradient-primary-hover: linear-gradient(135deg, map.get($colors, 'primary-hover') 0%, map.get($colors, 'secondary-hover') 100%);
+
+// ------------------------------------------------------
+// Spacing System (間距系統)
+// ------------------------------------------------------
+$spacings: (
+    '0': 0,
+    '1': 0.25rem, // 4px
+    '2': 0.5rem,  // 8px
+    '3': 0.75rem, // 12px
+    '4': 1rem,    // 16px
+    '5': 1.5rem,  // 24px
+    '6': 2rem,    // 32px
+    '8': 3rem,    // 48px
+    '10': 4rem,   // 64px
+    '12': 6rem    // 96px
+);
+
+
+// ------------------------------------------------------
+// Typography (字體系統)
+// ------------------------------------------------------
+
+// 字體家族
+$font-families: (
+    'base': (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif),
+    'heading': ("Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif), // 確保繼承 base
+    'mono': ("Fira Code", "Courier New", monospace)
+);
+
+
+// 字體大小 Map
+$font-sizes: (
+    'xs': 0.75rem,    // 12px
+    'sm': 0.875rem,   // 14px
+    'base': 1rem,     // 16px
+    'lg': 1.125rem,   // 18px
+    'xl': 1.25rem,    // 20px
+    '2xl': 1.5rem,  // 24px
+    '3xl': 1.875rem,// 30px
+    '4xl': 2.25rem  // 36px
+);
+
+// 字重 Map
+$font-weights: (
+    'light': 300,
+    'normal': 400,
+    'medium': 500,
+    'semibold': 600,
+    'bold': 700
+);
+
+// 行高 Map
+$line-heights: (
+    'none': 1,
+    'tight': 1.25,
+    'normal': 1.5,
+    'relaxed': 1.75
+);
+
+
+// ------------------------------------------------------
+// Shadow System (陰影系統)
+// ------------------------------------------------------
+$shadows: (
+    'sm': (0 1px 2px 0 rgba(0, 0, 0, 0.05)),
+    'base': (0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)),
+    'md': (0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)),
+    'lg': (0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)),
+    'xl': (0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)),
+    '2xl': (0 25px 50px -12px rgba(0, 0, 0, 0.25)),
+    'inner': (inset 0 2px 4px 0 rgba(0, 0, 0, 0.06))
+);
+
+
+// ------------------------------------------------------
+// Border Radius (圓角系統)
+// ------------------------------------------------------
+$radii: (
+    'none': 0,
+    'sm': 0.125rem, // 2px
+    'base': 0.25rem, // 4px
+    'md': 0.375rem, // 6px
+    'lg': 0.5rem, // 8px
+    'xl': 0.75rem, // 12px
+    '2xl': 1rem, // 16px
+    'full': 9999px // 圓形
+);
+
+
+// ------------------------------------------------------
+// Breakpoints (響應式斷點)
+// ------------------------------------------------------
+$breakpoints: (
+    'xs': 0,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    '2xl': 1400px
+);
+
+
+// ------------------------------------------------------
+// Z-index Layers (層級系統)
+// ------------------------------------------------------
+$z-indices: (
+    'dropdown': 1000,
+    'sticky': 1020,
+    'fixed': 1030,
+    'modal-backdrop': 1040,
+    'modal': 1050,
+    'popover': 1060,
+    'tooltip': 1070
+);
+
+
+// ------------------------------------------------------
+// Transitions (過渡動畫)
+// ------------------------------------------------------
+$transitions: (
+    'fast': 150ms ease-in-out,
+    'base': 250ms ease-in-out,
+    'slow': 350ms ease-in-out
+);
+
+$eases: (
+    'in': cubic-bezier(0.4, 0, 1, 1),
+    'out': cubic-bezier(0, 0, 0.2, 1),
+    'in-out': cubic-bezier(0.4, 0, 0.2, 1)
+);
+
+
+// ======================================================
+// Semantic Tokens (語義語彙)
+// 依據設計語彙定義功能性的變數
+// ======================================================
+
+// 背景與表面
+$color-background: map.get(map.get($colors, 'gray'), '50');
+$color-surface: map.get($colors, 'white');
+$color-border: map.get(map.get($colors, 'gray'), '300');
+
+// 文字顏色
+$color-text-primary: map.get(map.get($colors, 'gray'), '700');
+$color-text-secondary: map.get(map.get($colors, 'gray'), '500');
+$color-text-muted: map.get(map.get($colors, 'gray'), '400');
+
+// 連結與互動
+$color-link: map.get($colors, 'primary');
+$color-link-hover: map.get($colors, 'secondary');
+
+
+// ------------------------------------------------------
+// Component Tokens (元件專用顏色)
+// ------------------------------------------------------
+
+// 按鈕
+$color-btn-primary-bg: $gradient-primary; // 使用定義好的漸層
+$color-btn-primary-hover: $gradient-primary-hover;
+$color-btn-primary-text: map.get($colors, 'white');
+
+// 卡片
+$color-card-bg: $color-surface;
+$color-card-border: $color-border;
+$color-card-shadow: map.get($colors, shadow);
+
+// 表單輸入
+$color-input-bg: $color-surface;
+$color-input-border: $color-border;
+$color-input-focus: map.get($colors, primary);
+$color-input-text: $color-text-primary;
+$color-input-placeholder: $color-text-muted;
+
+
+// ======================================================
+// Theme Maps (主題配色表)
+// 根據語義色定義明暗主題
+// ======================================================
+
+$theme-light: (
+    "background": $color-background,
+    "surface": $color-surface,
+    "border": $color-border,
+    "text": $color-text-primary,
+    "text-secondary": $color-text-secondary,
+    "text-muted": $color-text-muted,
+    "primary": map.get($colors, primary),
+    "secondary": map.get($colors, secondary),
+    "success": map.get($colors, success),
+    "warning": map.get($colors, warning),
+    "danger": map.get($colors, danger),
+    "info": map.get($colors, info),
+    "link": $color-link,
+    "link-hover": $color-link-hover
+);
+
+$theme-dark: (
+    "background": map.get(map.get($colors, 'gray'), '900'),
+    "surface": map.get(map.get($colors, 'gray'), '800'),
+    "border": map.get(map.get($colors, 'gray'), '700'),
+    "text": map.get(map.get($colors, 'gray'), '100'),
+    "text-secondary": map.get(map.get($colors, 'gray'), '400'),
+    "text-muted": map.get(map.get($colors, 'gray'), '500'),
+    "primary": color.adjust(map.get($colors, 'primary'), $lightness: 8%),
+    "secondary": color.adjust(map.get($colors, 'secondary'), $lightness: 8%),
+    "success": color.adjust(map.get($colors, 'success'), $lightness: 8%),
+    "warning": color.adjust(map.get($colors, 'warning'), $lightness: 8%),
+    "danger": color.adjust(map.get($colors, 'danger'), $lightness: 8%),
+    "info": color.adjust(map.get($colors, 'info'), $lightness: 8%),
+    "link": color.adjust(map.get($colors, 'primary'), $lightness: 12%),
+    "link-hover": color.adjust(map.get($colors, 'secondary'), $lightness: 12%)
+);
+
+
+// ======================================================
+// Functions & Mixins (輔助函數與 Mixin)
+// 常用工具函數和響應式 Mixin
+// ======================================================
+
+// ------------------------------------------------------
+// 顏色獲取函數
+// ------------------------------------------------------
+/// 獲取顏色值
+/// @param $key {String} 顏色的主鍵 (e.g., 'primary', 'white', 'gray')
+/// @param $shade {Number} (Optional) 灰階或其他顏色層次的數字鍵 (e.g., 50, 100, 500)
+/// @return {Color} 對應的顏色值
+/// @warn 如果顏色鍵不存在
+@function get-color($key, $shade: null) {
+    @if map.has-key($colors, $key) {
+        $color-val: map.get($colors, $key);
+
+        @if $shade and meta.type-of($color-val) == "map" {
+            @if map.has-key($color-val, $shade) {
+                @return map.get($color-val, $shade);
+            } @else {
+                @warn "Shade `#{$shade}` not found for color `#{$key}`.";
+            }
+        } @else if not $shade {
+            @return $color-val;
+        } @else {
+            @warn "Color `#{$key}` is not a map and does not accept a shade.";
+        }
+    } @else {
+        @warn "Color key `#{$key}` not found in $colors map.";
+    }
+
+    @return null; // 返回 null 以避免編譯錯誤，但會觸發警告
+}
+
+// ------------------------------------------------------
+// 主題顏色獲取函數
+// ------------------------------------------------------
+/// 獲取主題顏色值
+/// @param $key {String} 主題顏色的鍵 (e.g., 'background', 'primary', 'text')
+/// @param $mode {String} 主題模式 ('light' 或 'dark')
+/// @param $fallback {Color} (Optional) 如果鍵不存在時的回退顏色
+/// @return {Color} 對應的主題顏色值
+/// @warn 如果主題鍵不存在
+@function theme-color($key, $mode: light, $fallback: null) {
+    $theme: if($mode == dark, $theme-dark, $theme-light);
+
+    @if map.has-key($theme, $key) {
+        @return map.get($theme, $key);
+    }
+
+    @else if $fallback {
+        @return $fallback;
+    }
+
+    @else {
+        @warn "Key `#{$key}` not found in theme `#{$mode}`";
+        @return null;
+    }
+}
+
+// ------------------------------------------------------
+// 其他設計語彙獲取函數
+// ------------------------------------------------------
+/// 獲取間距值
+/// @param $key {Number} 間距鍵
+/// @return {Length} 對應的間距值
+@function spacing($key) {
+    @if map.has-key($spacings, $key) {
+        @return map.get($spacings, $key);
+    }
+
+    @else {
+        @warn "Spacing key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取字體家族
+/// @param $key {String} 字體家族鍵
+/// @return {List} 對應的字體家族列表
+@function font-family($key) {
+    @if map.has-key($font-families, $key) {
+        @return map.get($font-families, $key);
+    }
+
+    @else {
+        @warn "Font family key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取字體大小
+/// @param $key {String} 字體大小鍵
+/// @return {Length} 對應的字體大小值
+@function font-size($key) {
+    @if map.has-key($font-sizes, $key) {
+        @return map.get($font-sizes, $key);
+    }
+
+    @else {
+        @warn "Font size key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取字重
+/// @param $key {String} 字重鍵
+/// @return {Number} 對應的字重值
+@function font-weight($key) {
+    @if map.has-key($font-weights, $key) {
+        @return map.get($font-weights, $key);
+    }
+
+    @else {
+        @warn "Font weight key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取行高
+/// @param $key {String} 行高鍵
+/// @return {Number} 對應的行高值
+@function line-height($key) {
+    @if map.has-key($line-heights, $key) {
+        @return map.get($line-heights, $key);
+    }
+
+    @else {
+        @warn "Line height key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取陰影值
+/// @param $key {String} 陰影鍵
+/// @return {List} 對應的陰影值
+@function shadow($key) {
+    @if map.has-key($shadows, $key) {
+        @return map.get($shadows, $key);
+    }
+
+    @else {
+        @warn "Shadow key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取圓角值
+/// @param $key {String} 圓角鍵
+/// @return {Length} 對應的圓角值
+@function radius($key) {
+    @if map.has-key($radii, $key) {
+        @return map.get($radii, $key);
+    }
+
+    @else {
+        @warn "Radius key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取斷點值 (含錯誤處理)
+/// @param $key {String} 斷點鍵
+/// @return {Length} 對應的斷點值
+@function breakpoint($key) {
+    @if map.has-key($breakpoints, $key) {
+        @return map.get($breakpoints, $key);
+    }
+
+    @else {
+        @warn "Breakpoint `#{$key}` not found. Available breakpoints: #{map.keys($breakpoints)}";
+        @return null;
+    }
+}
+
+/// 獲取 Z-index 值
+/// @param $key {String} Z-index 鍵
+/// @return {Number} 對應的 Z-index 值
+@function z-index($key) {
+    @if map.has-key($z-indices, $key) {
+        @return map.get($z-indices, $key);
+    }
+
+    @else {
+        @warn "Z-index key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取過渡動畫值
+/// @param $key {String} 過渡動畫鍵
+/// @return {String} 對應的過渡動畫值
+@function transition($key) {
+    @if map.has-key($transitions, $key) {
+        @return map.get($transitions, $key);
+    }
+
+    @else {
+        @warn "Transition key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+/// 獲取過渡動畫緩動函數
+/// @param $key {String} 緩動函數鍵
+/// @return {String} 對應的緩動函數值
+@function ease($key) {
+    @if map.has-key($eases, $key) {
+        @return map.get($eases, $key);
+    }
+
+    @else {
+        @warn "Ease key `#{$key}` not found.";
+        @return null;
+    }
+}
+
+// ------------------------------------------------------
+// 響應式 Mixins
+// ------------------------------------------------------
+/// Mixin：min-width (Mobile First)
+/// @param $key {String} 斷點鍵
+@mixin respond-above($key) {
+    $value: breakpoint($key);
+
+    @if $value {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+}
+
+/// Mixin：max-width (Desktop First，避免重疊)
+/// @param $key {String} 斷點鍵
+@mixin respond-below($key) {
+    $value: breakpoint($key);
+
+    @if $value !=null {
+
+        // 確保 $value 不是 null
+        @if $value >0 {
+
+            // 對於大於 0 的斷點，減 1px 避免重疊
+            @media (max-width: #{$value - 1px}) {
+                @content;
+            }
+        }
+
+        @else {
+            // 處理 $value = 0 (xs 斷點) 的情況
+            @content; // xs 斷點通常指沒有最小寬度限制，直接應用內容
+        }
+    }
+}
+
+/// Mixin：區間查詢 (避免上限重疊)
+/// @param $min-key {String} 最小斷點鍵
+/// @param $max-key {String} 最大斷點鍵
+@mixin respond-between($min-key, $max-key) {
+    $min: breakpoint($min-key);
+    $max: breakpoint($max-key);
+
+    @if $min !=null and $max !=null {
+        @if $min <=$max {
+
+            // 確保最小斷點不超過最大斷點
+            @media (min-width: $min) and (max-width: #{$max - 1px}) {
+                @content;
+            }
+        }
+
+        @else {
+            @warn "Invalid range for respond-between: #{$min-key} is greater than #{$max-key}.";
+        }
+    }
+}
+
+// ------------------------------------------------------
+// 實用輔助 Mixin (基於 respond-above 和 respond-below)
+// ------------------------------------------------------
+@mixin mobile-only {
+    @include respond-below(md) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @include respond-above(md) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    @include respond-above(xl) {
+        @content;
+    }
+}
