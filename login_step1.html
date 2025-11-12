@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="login__logo">
+            <div class="login__logo-group">
+                <img class="login__logo-img" src="img/as_logo_4.png">
+                <h1 class="login__logo-heading">
+                    資訊科學研究所<br><span class="login__logo-heading-en">Institute of Information Science</span>
+                </h1>
+            </div>
+        </div>
+        <div class="login__auth">
+            <div class="login__auth-group">
+                <h2 class="login__title">選擇登入方式
+                    <br />
+                    <span class="login__title-en">Sign-In Method</span>
+                </h2>
+                <form action="login_step2.html">
+                    <div class="form-field">
+                        <label class="form-label" for="username">帳號 Username</label>
+                        <input name="username" class="form-control" type="text" autocomplete="username" />
+                    </div>                
+                    <div class="btn-wrapper">
+                        <button class="btn btn--primary" type="submit">下一步 Next</button>
+                    </div>
+                    <div class="divider"><span class="divider__text">OR</span></div>  
+                    <a class="btn btn--secondary" href="#">Academia Sinica SSO</a>  
+                    <a class="btn btn--secondary" href="#">行動自然人憑證</a>            
+                    <!-- <div class="btn-wrapper">
+                        <button class="btn btn--secondary">Academia Sinica SSO</button>
+                    </div>
+                    <div class="btn-wrapper">
+                        <button class="btn btn--secondary">行動自然人憑證</button>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="login__logo">
+            <div class="login__logo-group">
+                <img class="login__logo-img" src="img/as_logo_4.png">
+                <h1 class="login__logo-heading">
+                    資訊科學研究所<br><span class="login__logo-heading-en">Institute of Information Science</span>
+                </h1>
+            </div>
+        </div>
+        <div class="login__auth">
+            <div class="login__auth-group">
+                <h2 class="login__title">身份驗證
+                    <br />
+                    <span class="login__title-en">Authentication</span>
+                </h2>
+                <form action="login_step4.html">
+                    <!-- 'PASSWORD' or 'IDEXPERT_OTP' -->
+                    <div class="form-field">
+                        <label class="form-label" for="pw">通行碼 Password</label>
+                        <input name="pw" class="form-control" type="text" autocomplete="pw" />
+                    </div>
+                    <!-- 'IDEXPERT_OTP' -->
+                    <div class="form-field">
+                        <label class="form-label" for="otp">OTP 代碼 OTP Code</label>
+                        <input name="otp" class="form-control" type="text" />
+                    </div>
+                    <!-- IDEXPERT_PUSH -->
+                    <div class="form-field">三十秒計時器</div>
+                    <!-- IDEXPERT_QRCODE -->
+                    <div class="form-field">
+                        <label class="form-label" for="otp">QR 代碼 QR Code: agentCode</label>
+                        <img src="img/qr_code.png" alt="QR Code">
+                        三十秒計時器
+                    </div>
+                    <!-- ne 'IDEXPERT_QRCODE' -->
+                    <div class="btn-wrapper">
+                        <button class="btn btn--primary" type="submit">繼續 Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
