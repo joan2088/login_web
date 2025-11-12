@@ -183,6 +183,7 @@ body {
             width: 50%;
             display: flex;
             align-items: center;
+            padding: variables.spacing('0');
             &-group {
                 padding-left: 10%;
             }
