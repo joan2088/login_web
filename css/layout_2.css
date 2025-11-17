@@ -136,7 +136,7 @@ body {
     height: 78%;
   }
   .login__logo-img {
-    width: 14%;
+    width: 16%;
   }
   .login__logo-heading {
     font-size: 1.5rem;
@@ -191,12 +191,21 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: auto;
   }
   .login__logo-img {
     width: 60%;
+    margin: auto;
   }
   .login__logo-heading {
     padding-top: 1rem;
+    padding-left: 0;
+    text-align: center;
+  }
+  .login__logo-group {
+    display: block;
+    padding-left: 0;
+    height: auto;
   }
   .login__auth {
     width: 60%;
@@ -210,5 +219,8 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0;
+  }
+  .curve {
+    display: none;
   }
 }/*# sourceMappingURL=layout_2.css.map */
