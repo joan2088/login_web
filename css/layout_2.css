@@ -72,7 +72,7 @@ body {
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #ffffff;
   position: relative;
-  min-height: 160px;
+  height: 160px;
 }
 .login__logo-group {
   display: -webkit-box;
@@ -126,19 +126,27 @@ body {
 
 @media (min-width: 768px) {
   .login__logo {
-    min-height: 220px;
+    height: 240px;
   }
   .login__logo-group {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     padding-left: 10%;
+    height: 78%;
   }
   .login__logo-img {
     width: 16%;
   }
+  .login__logo-heading {
+    font-size: 1.5rem;
+    padding-left: 0.75rem;
+  }
+  .login__logo-heading-en {
+    font-size: 1rem;
+  }
   .login__auth {
-    padding: 1.5rem 3rem;
+    padding: 0 3rem 1.5rem;
   }
 }
 @media (min-width: 1200px) {
