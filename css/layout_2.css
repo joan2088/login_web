@@ -78,9 +78,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -94,7 +91,7 @@ body {
   font-size: 0.875rem;
 }
 .login__logo-img {
-  width: 30%;
+  width: 100px;
 }
 .login__title {
   text-align: center;
@@ -125,31 +122,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .login__logo {
-    height: 240px;
-  }
-  .login__logo-group {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding-left: 10%;
-    height: 78%;
-  }
-  .login__logo-img {
-    width: 16%;
-  }
-  .login__logo-heading {
-    font-size: 1.5rem;
-    padding-left: 0.75rem;
-  }
-  .login__logo-heading-en {
-    font-size: 1rem;
-  }
-  .login__auth {
-    padding: 0 3rem 1.5rem;
-  }
-}
-@media (min-width: 1200px) {
   body {
     background-color: #f8f9fa;
   }
@@ -166,13 +138,38 @@ body {
     height: 100vh;
   }
   .auth-card {
-    width: 900px;
-    height: 520px;
+    width: 522px;
+    height: 600px;
     background: #ffffff;
     border-radius: 1.5rem;
     -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
+  }
+  .login__logo {
+    height: 176px;
+  }
+  .login__logo-group {
+    padding-left: 1rem;
+  }
+  .login__logo-img {
+    width: 120px;
+  }
+  .login__logo-heading {
+    font-size: 1.5rem;
+    padding-left: 0.75rem;
+  }
+  .login__logo-heading-en {
+    font-size: 1rem;
+  }
+  .login__auth {
+    padding: 0 3rem 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .auth-card {
+    width: 900px;
+    height: 520px;
   }
   .login {
     display: -webkit-box;
@@ -194,7 +191,7 @@ body {
     height: auto;
   }
   .login__logo-img {
-    width: 60%;
+    width: 140px;
     margin: auto;
   }
   .login__logo-heading {
