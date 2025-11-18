@@ -82,6 +82,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.login__logo-curve {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
 .login__logo-heading {
   padding-left: 0.5rem;
   line-height: 1.25;
@@ -112,13 +118,6 @@ body {
 
 .form-label {
   display: block;
-}
-
-.curve {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0;
 }
 
 @media (min-width: 768px) {
@@ -197,6 +196,9 @@ body {
     padding-left: 0;
     height: auto;
   }
+  .login__logo-curve {
+    display: none;
+  }
   .login__auth {
     width: 60%;
     display: -webkit-box;
@@ -209,8 +211,5 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0;
-  }
-  .curve {
-    display: none;
   }
 }/*# sourceMappingURL=layout_2.css.map */
