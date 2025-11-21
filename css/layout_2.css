@@ -24,8 +24,6 @@ body {
   color: #171923;
   text-align: center;
   cursor: pointer;
-}
-.btn-wrapper {
   margin-bottom: 1rem;
 }
 .btn--primary {
