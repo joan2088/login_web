@@ -123,18 +123,8 @@ body {
 @media (min-width: 768px) {
   body {
     background-color: #f8f9fa;
-  }
-  .page-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   .auth-card {
     width: 522px;
@@ -144,6 +134,7 @@ body {
     -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    margin: auto;
   }
   .login__logo {
     height: 166px;
@@ -159,6 +150,10 @@ body {
   }
 }
 @media (min-width: 1200px) {
+  body {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
   .auth-card {
     width: 900px;
     height: 520px;
