@@ -6,11 +6,11 @@ body {
 .form-control {
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
-  padding: 0.25rem;
+  padding: 0.5rem;
   width: 100%;
 }
 .form-field {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -23,8 +23,10 @@ body {
   text-decoration: none;
   color: #171923;
   text-align: center;
-  margin-bottom: 0.5rem;
   cursor: pointer;
+}
+.btn-wrapper {
+  margin-bottom: 1rem;
 }
 .btn--primary {
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -206,5 +208,11 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0;
+  }
+  .login__auth-group {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+    padding: 0 6rem;
   }
 }/*# sourceMappingURL=layout_2.css.map */
