@@ -27,22 +27,19 @@
                     </div>
                 </div>
                 <div class="login__auth">
-                    <form action="login_card_step2.html" class="login__form">
-                        <div class="login__auth-group">
-                            <h2 class="login__title">選擇登入方式
-                                <br />
-                                <span class="login__title-en">Sign-In Method</span>
-                            </h2>
-                            <div class="form-field">
-                                <label class="form-label" for="username">帳號 Username</label>
-                                <input name="username" class="form-control" type="text" autocomplete="username" />
-                            </div> 
-                            <button class="btn btn--primary" type="submit">下一步 Next</button>                        
-                            <div class="divider"><span class="divider__text">OR</span></div>                        
-                            <a class="btn btn--secondary" href="#">Academia Sinica SSO</a>
-                            <a class="btn btn--secondary" href="#">行動自然人憑證</a>
+                    <div class="login__auth-group">
+                        <h2 class="login__title">選擇驗證方式
+                            <br />
+                            <span class="login__title-en">Authentication Method</span>
+                        </h2>
+                        <div class="btn-wrapper">
+                            <a class="btn btn--secondary" href="login_card_step3.html">FIDO Key</a>  
+                            <a class="btn btn--secondary" href="login_card_step3.html">Push</a>
+                            <a class="btn btn--secondary" href="login_card_step3.html">QRCode</a>
+                            <a class="btn btn--secondary" href="login_card_step3.html">Password</a>
+                            <a class="btn btn--secondary" href="login_card_step3.html">Password + OTP</a> 
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
