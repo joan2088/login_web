@@ -209,6 +209,7 @@ body {
   -webkit-animation: push-text-fade 2s ease-in-out infinite;
           animation: push-text-fade 2s ease-in-out infinite;
   font-size: 0.875rem;
+  width: 100%;
 }
 .login__push-text-en {
   font-size: 0.75rem;
