@@ -35,11 +35,18 @@ $colors: (
     // 狀態色系（State Colors）
     'success': #48bb78,
     // 成功、完成
-    'warning': #ed8936,
+    // 'warning': #ed8936,
+    'warning': #9F6000,
+    'warning-light': #edda9d,
+    'warning-lighter': #fff9e6,
     // 警告、注意
-    'danger': #f56565,
+    'danger': #c53030,
+    'danger-light': #f7cccc,
+    'danger-lighter': #fff5f5,
     // 錯誤、警示
     'info': #4299e1,
+    'info-light': #d5dee5,
+    'info-lighter': #f0f7fd,
     // 提示、資訊
 
     // 特效色（Effects）
@@ -121,7 +128,8 @@ $shadows: (
     'lg': (0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)),
     'xl': (0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)),
     '2xl': (0 25px 50px -12px rgba(0, 0, 0, 0.25)),
-    'inner': (inset 0 2px 4px 0 rgba(0, 0, 0, 0.06))
+    'inner': (inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)),
+    'glow': (0 0 15px 0 rgba(0, 0, 0, 0.2))
 );
 
 
@@ -136,6 +144,7 @@ $radii: (
     'lg': 0.5rem, // 8px
     'xl': 0.75rem, // 12px
     '2xl': 1rem, // 16px
+    '3xl': 1.5rem, //24px
     'full': 9999px // 圓形
 );
 

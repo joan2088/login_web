@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/layout_2.css">
 </head>
@@ -33,6 +34,7 @@
                                 <br />
                                 <span class="login__title-en">Authentication</span>
                             </h2>
+                            <div class="login__account"><i class="fa-solid fa-circle-user login__account-icon"></i>my-account000</div>
                             <!-- 'PASSWORD' or 'IDEXPERT_OTP' -->
                             <!-- <div class="form-field">
                                 <label class="form-label" for="pw">通行碼 Password</label>
@@ -44,21 +46,55 @@
                                 <input name="otp" class="form-control" type="text" />
                             </div> -->
                             <!-- IDEXPERT_PUSH -->
-                            <!-- <div class="auth-item">三十秒計時器</div> -->
-                            <!-- IDEXPERT_QRCODE -->
-                            <div class="auth-item">
+                            <div class="login__push">
+                                <ol class="login__push-steps">
+                                    <li class="login__push-step">請至手機確認推播通知<br>Check your phone.</li>
+                                    <li class="login__push-step">開啟 IDExpert App<br>Open IDExpert.</li>
+                                    <li class="login__push-step">依 App 指示完成驗證<br>Follow the app instructions.</li>
+                                </ol>                                
+                                <div class="login__push-display">
+                                    <div class="login__push-visual">
+                                        <div class="push-visual__ring"></div>
+                                        <div class="push-visual__ring push-visual__ring--delay"></div>
+                                        <i class="fa-solid fa-mobile-screen-button push-visual__icon"></i>
+                                    </div>
+                                    <p class="login__push-text">
+                                        等待手機驗證中...
+                                        <br>
+                                        <span class="login__push-text-en">Waiting for verification...</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- IDEXPERT_QRCODE -->                            
+                            <!-- <div class="auth-item">
                                 <p>QR 代碼 QR Code: agentCode</p>
                                 <img src="img/qr_code.png" alt="QR Code" class="qr-code">
-                                三十秒計時器
-                            </div>
+                                <div class="timer">
+                                    <svg class="timer__ring" viewBox="0 0 100 100">
+                                        <defs>
+                                            <linearGradient id="timer-progress-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop class="timer__gradient-start" offset="0%" />
+                                                <stop class="timer__gradient-end" offset="100%" />
+                                            </linearGradient>
+                                        </defs>
+                                        <circle class="timer__track" cx="50" cy="50" r="35" />
+                                        <circle class="timer__progress" id="js-timer__progress" cx="50" cy="50" r="35" stroke-dasharray="219.91" stroke-dashoffset="0" />
+                                    </svg>
+                                    <div class="timer__display" id="js-timer__display">30</div>
+                                </div>
+                            </div> -->
                             <!-- ne 'IDEXPERT_QRCODE' -->
-                            <button class="btn btn--primary" type="submit">繼續 Continue</button>
+                            <!-- <button class="btn btn--primary" type="submit">繼續 Continue</button>
+                            <div class="login__back">
+                                <a class="link" href="login_card_step2.html">其他登入方式 Other sign-in methods</a>
+                            </div> -->
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     <!-- </div> -->
+     <script src="js/timer.js"></script>
 </body>
 
 </html>

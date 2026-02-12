@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" /> -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/layout_2.css">
 </head>
@@ -32,12 +34,21 @@
                             <br />
                             <span class="login__title-en">Authentication Method</span>
                         </h2>
+                        <!-- <div class="msg msg-error"><i class="fa-solid fa-circle-xmark"></i> 認證失敗，帳號或密碼錯誤 / Authentication failed, invalid account or password</div>
+                        <div class="msg msg-warn"><i class="fa-solid fa-triangle-exclamation"></i> 認證警告，帳號或密碼錯誤 / Authentication failed, invalid account or password</div>
+                        <div class="msg msg-info"><i class="fa-solid fa-circle-exclamation"></i> 成功 / Authentication failed, invalid account or password</div> -->
+                        <!-- <div class="login__account"><i class="fa-solid fa-user login__account-icon"></i>my-account000</div> -->
+                        <div class="login__account"><i class="fa-solid fa-circle-user login__account-icon"></i>my-account000</div>
                         <div class="btn-wrapper">
                             <a class="btn btn--secondary" href="login_card_step3.html">FIDO Key</a>  
                             <a class="btn btn--secondary" href="login_card_step3.html">Push</a>
                             <a class="btn btn--secondary" href="login_card_step3.html">QRCode</a>
                             <a class="btn btn--secondary" href="login_card_step3.html">Password</a>
-                            <a class="btn btn--secondary" href="login_card_step3.html">Password + OTP</a> 
+                            <a class="btn btn--secondary" href="login_card_step3.html">Password + OTP</a>                             
+                        </div>
+                        <div class="login__back">
+                            <a class="link" href="login_card_step1.html">使用其他帳號 Use another username</a>
+                            <!-- <button class="btn btn--link" href="login_card_step1.html">使用其他帳號 Use another username</button> -->
                         </div>
                     </div>
                 </div>
