@@ -223,12 +223,12 @@ body {
 }
 .login__qr-img {
   width: 60%;
-  margin: 0.5rem auto;
+  margin: 0 auto;
 }
 .login__qpin {
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 .login__qpin-value {
   font-size: 1.25rem;
