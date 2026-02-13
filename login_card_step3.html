@@ -18,7 +18,7 @@
                     <div class="login__logo-group">
                         <img class="login__logo-img" src="img/as_logo_4.png">
                         <h1 class="login__logo-heading">
-                            資訊科學研究所<br><span class="login__logo-heading-en">Institute of Information Science</span>
+                            資訊科學研究所<br /><span class="login__logo-heading-en">Institute of Information Science</span>
                         </h1>
                     </div>
                     <div class="login__logo-curve">
@@ -46,11 +46,11 @@
                                 <input name="otp" class="form-control" type="text" />
                             </div> -->
                             <!-- IDEXPERT_PUSH -->
-                            <div class="login__push">
-                                <ol class="login__push-steps">
-                                    <li class="login__push-step">請至手機確認推播通知<br>Check your phone.</li>
-                                    <li class="login__push-step">開啟 IDExpert App<br>Open IDExpert.</li>
-                                    <li class="login__push-step">依 App 指示完成驗證<br>Follow the app instructions.</li>
+                            <!-- <div class="login__push">
+                                <ol class="login__steps">
+                                    <li class="login__step">請至手機確認推播通知<br />Check your phone.</li>
+                                    <li class="login__step">開啟 IDExpert App<br />Open IDExpert.</li>
+                                    <li class="login__step">依 App 指示完成驗證<br />Follow the app instructions.</li>
                                 </ol>                                
                                 <div class="login__push-display">
                                     <div class="login__push-visual">
@@ -60,15 +60,22 @@
                                     </div>
                                     <p class="login__push-text">
                                         等待手機驗證中...
-                                        <br>
+                                        <br />
                                         <span class="login__push-text-en">Waiting for verification...</span>
                                     </p>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- IDEXPERT_QRCODE -->                            
                             <div class="login__qr">
                                 <img src="img/qr_code.png" alt="QR Code" class="login__qr-img">
-                                <p class="login__qpin">QPin: <span class="login__qpin-value">1688</span></p>                                
+                                <p class="login__qpin">QPin: <span class="login__qpin-value">1688</span></p>
+                                <ol class="login__steps">
+                                    <li class="login__step">開啟手機相機或 IDExpert APP<br />Open camera or IDExpert App.</li>
+                                    <li class="login__step">掃描上方 QR Code<br />Scan the QR Code above.</li>
+                                    <li class="login__step">依 App 指示完成驗證<br />Follow the app instructions.</li>
+                                    <li class="login__step">無法掃描？輸入 QPin 登入<br />Can't scan? Enter QPin to sign in</li>
+                                </ol>                                
+                                <!-- login__qr-hint -->
                                 <!-- 暫不使用timer -->
                                 <!-- <div class="timer">
                                     <svg class="timer__ring" viewBox="0 0 100 100">
