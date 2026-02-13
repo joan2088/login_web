@@ -223,8 +223,14 @@ body {
   margin-bottom: 1.5rem;
 }
 .login__qr-img {
-  width: 60%;
-  max-width: 220px;
+  width: 50%;
+  margin: 0.5rem auto;
+}
+.login__qpin-value {
+  font-size: 1.125rem;
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, "Courier New", monospace;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .push-visual__ring {
