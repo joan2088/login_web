@@ -164,16 +164,16 @@ body {
   color: #718096;
   font-size: 1.5rem;
 }
+.login__steps {
+  padding-left: 1.5rem;
+}
+.login__step {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
 .login__push {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-.login__push-steps {
-  padding-left: 1.5rem;
-}
-.login__push-step {
-  margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
 }
 .login__push-display {
   display: -webkit-box;
@@ -218,16 +218,20 @@ body {
   font-size: 0.75rem;
 }
 .login__qr {
-  text-align: center;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 .login__qr-img {
-  width: 50%;
+  width: 60%;
   margin: 0.5rem auto;
 }
+.login__qpin {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .login__qpin-value {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, "Courier New", monospace;
   font-weight: 600;
   letter-spacing: 1px;
