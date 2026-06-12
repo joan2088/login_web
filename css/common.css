@@ -352,6 +352,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  min-width: 0;
 }
 .form-radio:hover {
   border-color: #a0aec0;
@@ -367,10 +368,28 @@
 .form-radio__text {
   width: 100%;
   cursor: pointer;
+  overflow: hidden;
 }
 .form-radio__text-en {
   display: block;
   font-size: 0.875rem;
+}
+
+.search-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+.search-group__input {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 0px;
+          flex: 2 1 0;
+}
+.search-group__btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
 }
 
 .btn {
