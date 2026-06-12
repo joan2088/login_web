@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layout_2.css">
 </head>
 
@@ -18,7 +19,7 @@
                     <div class="login__logo-group">
                         <img class="login__logo-img" src="img/as_logo_4.png">
                         <h1 class="login__logo-heading">
-                            資訊科學研究所<br /><span class="login__logo-heading-en">Institute of Information Science</span>
+                            資訊科學研究所<span class="login__logo-heading-en">Institute of Information Science</span>
                         </h1>
                     </div>
                     <div class="login__logo-curve">
@@ -31,26 +32,25 @@
                     <form action="login_card_step4.html" class="login__form">
                         <div class="login__auth-group">                        
                             <h2 class="login__title">身份驗證
-                                <br />
                                 <span class="login__title-en">Authentication</span>
                             </h2>
                             <div class="login__account"><i class="fa-solid fa-circle-user login__account-icon"></i>my-account000</div>
                             <!-- 'PASSWORD' or 'IDEXPERT_OTP' -->
                             <!-- <div class="form-field">
                                 <label class="form-label" for="pw">通行碼 Password</label>
-                                <input name="pw" class="form-control" type="text" autocomplete="pw" />
+                                <input name="pw" class="form-input" type="text" autocomplete="pw" />
                             </div> -->
                             <!-- 'IDEXPERT_OTP' -->
                             <!-- <div class="form-field">
                                 <label class="form-label" for="otp">OTP 代碼 OTP Code</label>
-                                <input name="otp" class="form-control" type="text" />
+                                <input name="otp" class="form-input" type="text" />
                             </div> -->
                             <!-- IDEXPERT_PUSH -->
-                            <!-- <div class="login__push">
+                            <div class="login__push">
                                 <ol class="login__steps">
-                                    <li class="login__step">請至手機確認推播通知<br />Check your phone.</li>
-                                    <li class="login__step">開啟 IDExpert App<br />Open IDExpert.</li>
-                                    <li class="login__step">依 App 指示完成驗證<br />Follow the app instructions.</li>
+                                    <li class="login__step">請至手機確認推播通知<span class="login__step-en">Check your phone.</span></li>
+                                    <li class="login__step">開啟 IDExpert App<span class="login__step-en">Open IDExpert.</span></li>
+                                    <li class="login__step">依 App 指示完成驗證<span class="login__step-en">Follow the app instructions.</span></li>
                                 </ol>                                
                                 <div class="login__push-display">
                                     <div class="login__push-visual">
@@ -60,22 +60,20 @@
                                     </div>
                                     <p class="login__push-text">
                                         等待手機驗證中...
-                                        <br />
                                         <span class="login__push-text-en">Waiting for verification...</span>
                                     </p>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- IDEXPERT_QRCODE -->                            
                             <div class="login__qr">
                                 <img src="img/qr_code.png" alt="QR Code" class="login__qr-img">
                                 <p class="login__qpin">QPin: <span class="login__qpin-value">1688</span></p>
                                 <ol class="login__steps">
-                                    <li class="login__step">開啟手機相機或 IDExpert APP<br />Open camera or IDExpert App.</li>
-                                    <li class="login__step">掃描上方 QR Code<br />Scan the QR Code above.</li>
-                                    <li class="login__step">依 App 指示完成驗證<br />Follow the app instructions.</li>
-                                    <li class="login__step">無法掃描？輸入 QPin 登入<br />Can't scan? Enter QPin to sign in</li>
-                                </ol>                                
-                                <!-- login__qr-hint -->
+                                    <li class="login__step">開啟手機相機或 IDExpert APP<span class="login__step-en">Open camera or IDExpert App.</span></li>
+                                    <li class="login__step">掃描上方 QR Code<span class="login__step-en">Scan the QR Code above.</span></li>
+                                    <li class="login__step">依 App 指示完成驗證<span class="login__step-en">Follow the app instructions.</span></li>
+                                    <li class="login__step">無法掃描？輸入 QPin 登入<span class="login__step-en">Can't scan? Enter QPin to sign in</span></li>
+                                </ol>
                                 <!-- 暫不使用timer -->
                                 <!-- <div class="timer">
                                     <svg class="timer__ring" viewBox="0 0 100 100">

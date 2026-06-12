@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout_2.css">
+</head>
+
+<body>
+    <!-- <div class="page-wrapper"> -->
+    <div class="auth-card">
+        <div class="login">
+            <div class="login__logo">
+                <div class="login__logo-group">
+                    <img class="login__logo-img" src="img/as_logo_4.png">
+                    <h1 class="login__logo-heading">
+                        資訊科學研究所<span class="login__logo-heading-en">Institute of Information Science</span>
+                    </h1>
+                </div>
+                <div class="login__logo-curve">
+                    <svg viewBox="0 0 2048 250" preserveAspectRatio="none">
+                        <path d="M2048,282.963H0V70.951s385.111,212.012,1024,0c481.065-159.639,1024,0,1024,0v212.012Z"
+                            fill="#fff" />
+                    </svg>
+                </div>
+            </div>
+            <div class="login__auth">
+                <form action="#" class="login__form">
+                    <div class="login__auth-group">
+                        <h2 class="login__title">啟動代理登入
+                            <span class="login__title-en">Start Impersonation</span>
+                        </h2>
+                        <!-- <div class="msg msg--simple msg--info">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p class="msg__text">
+                                日錯誤了好變或可以開<span class="msg__text-en">Etiam dapibus ullamcorper velit</span>
+                            </p>
+                        </div> -->
+                        <!--會依前一頁輸入資訊，動態顯示無法啟動代理或不代理直接登入等資訊-->                        
+                        <!-- <div class="msg msg--error">
+                            <div class="msg__title">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                                <div class="msg__title-text">
+                                    無法啟動代理
+                                    <span class="msg__title-en">Impersonation Denied</span>
+                                </div>
+                            </div>
+                            <p class="msg__content">您尚未通過認證或 actor 上下文缺失，請重新登入。
+                                <span class="msg__content-en">Authentication required or actor context missing.</span>
+                            </p>
+                        </div> -->
+                        <div class="login__proxy">
+                            <button class="btn btn--primary" type="submit">不代理，直接登入 Continue without proxy</button>
+                            <div class="divider"><span class="divider__text">OR</span></div>
+                            <!-- 暫不使用 -->
+                            <!-- <fieldset class="form-field">
+                                <legend>
+                                    被代理對象 Subject
+                                </legend>                                
+                                <div class="form-radio-group">
+                                    <label class="form-radio">
+                                        <input id="has-account" name="proxy-subject" type="radio" value="account" />
+                                        <span class="form-radio__text">
+                                            已有帳號（AD/AM）
+                                            <span class="form-radio__text-en">Has Account</span>
+                                        </span>
+                                    </label>
+                                    <label class="form-radio">
+                                        <input id="has-account" name="proxy-subject" type="radio" value="account" />
+                                        <span class="form-radio__text">
+                                            無帳號者（人事系統）
+                                            <span class="form-radio__text-en">No Account (Personnel)</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </fieldset> -->
+                            <div class="form-field">
+                                <div>被代理對象 Subject</div>
+                                <div class="form-radio-group">
+                                    <div class="form-radio">
+                                        <input id="has-account" name="proxy-subject" type="radio" value="account" />
+                                        <label for="has-account" class="form-radio__text">已有帳號
+                                            <span class="form-radio__text-en">Has Account</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <input id="no-account" name="proxy-subject" type="radio" value="personnel" />
+                                        <label for="no-account" class="form-radio__text">無帳號者<span class="form-radio__text-en">No Account</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="subject-account">帳號 Username</label>
+                                <input id="subject-account" class="form-input" type="text" autocomplete="username" />
+                                <!-- 輸入帳號時會去後端查找人員資料，並顯示對應的資訊：姓名(帳號)或是查無此人 -->
+                                <div class="notice notice--success">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p class="notice__text">江胖胖（my-account）</p>
+                                </div>
+                                <div class="notice notice--info">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p class="notice__text">江胖胖（my-account）</p>
+                                </div>
+                                <div class="notice notice--warn">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <p class="notice__text">人事系統查無此人 / Personnel: subject not found</p>
+                                </div>
+                                <div class="notice notice--error">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <p class="notice__text">人事系統查無此人
+                                        <span class="notice__text-en">Personnel: subject not found</span>
+                                    </p>
+                                </div>
+                            </div> 
+                            <div class="form-field">
+                                <label class="form-label" for="org-unit-id">所別代碼 OrgUnit ID</label>
+                                <input id="org-unit-id" class="form-input" type="text" autocomplete="username" />
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="keyword">關鍵字 Keyword</label>
+                                <input id="keyword" class="form-input mb-16" type="text" autocomplete="username" />
+                                <button class="btn btn--tertiary" type="submit">搜尋 Search</button>
+                                <button class="btn btn--quaternary" type="submit">搜尋 Search</button>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="quick-pick">被冒名對象 Select subject</label>
+                                <select id="quick-pick" class="form-input">
+                                    <option value="1">請選擇 Select</option>
+                                    <option value="2">王胖胖</option>
+                                    <option value="3">江小胖</option>
+                                    <option value="4">星中胖</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="quick-pick">快速範本 Quick-pick</label>
+                                <select id="quick-pick" class="form-input">
+                                    <option value="1">自訂理由（自行輸入） Custom</option>
+                                    <option value="2">重現工單 Reproduce ticket</option>
+                                    <option value="3">驗證權限指派 Verify perm assignment</option>
+                                    <option value="4">驗證屬性對應 Verify attribute mapping</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="proxy-reason">代理理由（至少 10 字）Reason (≥ 10 chars)</label>
+                                <textarea id="proxy-reason" cols="40" rows="3" class="form-input"></textarea>
+                            </div>                          
+                            <button class="btn btn--primary" type="submit">確認啟動 Confirm &amp; Start</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</body>
+
+</html>
