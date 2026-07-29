@@ -18,7 +18,7 @@ body {
 
 @media (min-width: 768px) {
   .auth-card {
-    width: 522px;
+    width: 500px;
     min-height: 600px;
     background: #ffffff;
     border-radius: 1.5rem;
@@ -28,68 +28,60 @@ body {
     margin: auto;
   }
 }
-@media (min-width: 1200px) {
-  .auth-card {
-    width: 900px;
-    min-height: 460px;
+.auth-card__header {
+  padding: 1rem;
+  background-image: url("../img/curve-top.svg"), url("../img/bg.png"), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: center bottom, right top, center;
+  background-size: 114% auto, 150% auto, cover;
+  background-blend-mode: normal, color-burn, normal;
+}
+@media (min-width: 768px) {
+  .auth-card__header {
+    background-position: center calc(100% + 16px), right top, center;
+    background-size: 120% auto, 150% auto, cover;
   }
 }
-
-.login__logo {
-  padding: 0.75rem 1rem 2rem;
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
-  position: relative;
-  height: 160px;
-}
-.login__logo-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.login__logo-curve {
-  position: absolute;
-  bottom: 0;
-  width: 101%;
-  left: 0;
-}
-.login__logo-heading {
-  padding-left: 0.5rem;
+.auth-card__heading {
   line-height: 1.25;
   font-size: 1.25rem;
 }
-.login__logo-heading-en {
+.auth-card__heading-en {
   font-size: 0.875rem;
   display: block;
   padding-top: 0.5rem;
+  line-height: 1.5;
 }
-.login__logo-img {
-  width: 100px;
+.auth-card__body {
+  padding: 0 2rem 2rem;
 }
-.login__form {
-  width: 100%;
-}
-.login__title {
+.auth-card__title {
   text-align: center;
   margin-bottom: 1.5rem;
   line-height: 1;
 }
-.login__title-en {
+.auth-card__title-en {
   font-size: 1rem;
   display: block;
   padding-top: 0.5rem;
 }
-.login__auth {
-  padding: 0 2rem 2rem;
-  background-color: #ffffff;
+.auth-card__footer {
+  height: 74px;
+  background-image: url("../img/curve-bottom.svg"), url("../img/bg.png"), linear-gradient(135deg, #667eea, #764ba2);
+  background-repeat: no-repeat;
+  background-position: center calc(100% - 10px), right bottom, center;
+  background-size: 136% auto, cover, cover;
+  background-blend-mode: normal, color-burn, normal;
 }
-.login__input {
-  border: 1px solid #cbd5e0;
-  border-radius: 0.25rem;
+@media (min-width: 768px) {
+  .auth-card__footer {
+    background-position: center calc(100% - 4px), right bottom, center;
+    background-size: 136% auto, cover, cover;
+  }
 }
+
 .login__back {
   text-align: center;
   margin-top: 2rem;
@@ -406,4 +398,4 @@ body {
     overflow: hidden;
     margin: auto;
   }
-}/*# sourceMappingURL=layout_2.css.map */
+}/*# sourceMappingURL=layout_3.css.map */

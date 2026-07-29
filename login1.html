@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout_3.css">
+</head>
+
+<body>
+    <div class="auth-card">
+        <header class="auth-card__header">
+            <h1 class="auth-card__heading">
+                資訊科技創新研究中心<span class="auth-card__heading-en">Research Center for Information Technology Innovation</span>
+            </h1>
+            <!-- <h1 class="auth-card__heading">
+                資訊科學研究所<span class="auth-card__heading-en">Institute of Information Science</span>
+            </h1> -->
+        </header>
+        <div class="auth-card__body">
+            <form action="login_card_step2.html">                
+                <h2 class="auth-card__title">選擇登入方式
+                    <span class="auth-card__title-en">Sign-In Method</span>
+                </h2>
+                <div class="notice notice--error mb-16">
+                    <p class="notice__text">
+                        請重新驗證身分以繼續
+                        <span class="notice__text-en">Please re-authenticate to continue</span>
+                    </p>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="username">帳號 Username</label>
+                    <input name="username" class="form-input" type="text" autocomplete="username" />
+                </div>
+                <button class="btn btn--primary" type="submit">下一步 Next</button>
+                <a class="btn btn--secondary mt-16" href="javascript:;">使用其他帳號 Use another username</a>
+                <div class="divider"><span class="divider__text">OR</span></div>
+                <a class="btn btn--secondary mb-16" href="#">Academia Sinica SSO</a>
+                <a class="btn btn--secondary" href="#">行動自然人憑證</a>                
+            </form>
+        </div>
+        <div class="auth-card__footer"></div>
+    </div>
+</body>
+
+</html>
