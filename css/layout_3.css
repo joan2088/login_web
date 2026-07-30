@@ -64,10 +64,11 @@ body {
 }
 .auth-card__footer {
   height: 60px;
-  background-image: url("../img/curve-bottom.svg"), url("../img/bg.png"), linear-gradient(135deg, #667eea, #764ba2);
+  background-color: #ffffff;
+  background-image: url("../img/curve-bottom.svg"), url("../img/bg.png"), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-repeat: no-repeat;
-  background-position: center -1px, right bottom, center;
-  background-size: calc(100% + 2px) auto, cover, cover;
+  background-position: center top, right bottom, center;
+  background-size: 100% auto, cover, cover;
   background-blend-mode: normal, color-burn, normal;
 }
 
