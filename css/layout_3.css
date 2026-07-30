@@ -72,14 +72,7 @@ body {
   background-blend-mode: normal, color-burn, normal;
 }
 
-.login__back {
-  text-align: center;
-  margin-top: 2rem;
-}
-.login__back .btn:last-child {
-  margin-bottom: 0;
-}
-.login__account {
+.account-summary {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,26 +83,24 @@ body {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-.login__account-icon {
+.account-summary__icon {
   color: #718096;
   font-size: 1.5rem;
 }
-.login__steps {
+
+.steps {
   padding-left: 1.5rem;
 }
-.login__step {
+.steps__item {
   margin-bottom: 0.5rem;
   padding-left: 0.5rem;
 }
-.login__step-en {
+.steps__item-en {
   display: block;
   font-size: 0.875rem;
 }
-.login__push {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.login__push-display {
+
+.push-status {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,7 +116,20 @@ body {
           justify-content: center;
   margin-top: 1.5rem;
 }
-.login__push-visual {
+.push-status__text {
+  text-align: center;
+  margin-top: 1rem;
+  color: #718096;
+  -webkit-animation: push-status-text-fade 2s ease-in-out infinite;
+          animation: push-status-text-fade 2s ease-in-out infinite;
+  font-size: 0.875rem;
+  width: 100%;
+}
+.push-status__text-en {
+  font-size: 0.75rem;
+  display: block;
+}
+.push-visual {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,121 +143,14 @@ body {
   width: 80px;
   height: 80px;
 }
-.login__push-text {
-  text-align: center;
-  margin-top: 1rem;
-  color: #718096;
-  -webkit-animation: push-text-fade 2s ease-in-out infinite;
-          animation: push-text-fade 2s ease-in-out infinite;
-  font-size: 0.875rem;
-  width: 100%;
-}
-.login__push-text-en {
-  font-size: 0.75rem;
-  display: block;
-}
-.login__qr {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.login__qr-img {
-  width: 60%;
-  margin: 0 auto;
-  max-width: 220px;
-}
-.login__qpin {
-  text-align: center;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-.login__qpin-value {
-  font-size: 1.5rem;
-  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, "Courier New", monospace;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #667eea;
-}
-@media (min-width: 768px) {
-  .login__logo {
-    height: 166px;
-  }
-  .login__logo-group {
-    padding-left: 1rem;
-  }
-  .login__logo-heading {
-    padding-left: 0.75rem;
-  }
-  .login__auth {
-    padding: 0 3rem 2rem;
-  }
-}
-@media (min-width: 1200px) {
-  .login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
-  }
-  .login__logo {
-    width: 40%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    height: auto;
-  }
-  .login__logo-img {
-    width: 140px;
-    margin: auto;
-  }
-  .login__logo-heading {
-    padding-top: 1rem;
-    padding-left: 0;
-    text-align: center;
-  }
-  .login__logo-group {
-    display: block;
-    padding-left: 0;
-    height: auto;
-  }
-  .login__logo-curve {
-    display: none;
-  }
-  .login__auth {
-    width: 60%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 0;
-  }
-  .login__auth-group {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 0px;
-            flex: 1 1 0;
-    padding: 3rem 6rem;
-    min-height: 460px;
-  }
-}
-
 .push-visual__ring {
   position: absolute;
   border: 3px solid #667eea;
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  -webkit-animation: push-pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-          animation: push-pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  -webkit-animation: push-visual-pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+          animation: push-visual-pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 .push-visual__ring--delay {
   -webkit-animation-delay: 0.5s;
@@ -262,11 +159,11 @@ body {
 .push-visual__icon {
   font-size: 40px;
   color: #667eea;
-  -webkit-animation: push-bounce 2s ease-in-out infinite;
-          animation: push-bounce 2s ease-in-out infinite;
+  -webkit-animation: push-visual-bounce 2s ease-in-out infinite;
+          animation: push-visual-bounce 2s ease-in-out infinite;
 }
 
-@-webkit-keyframes push-pulse {
+@-webkit-keyframes push-visual-pulse {
   0% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -279,7 +176,7 @@ body {
   }
 }
 
-@keyframes push-pulse {
+@keyframes push-visual-pulse {
   0% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -291,7 +188,7 @@ body {
     opacity: 0;
   }
 }
-@-webkit-keyframes push-bounce {
+@-webkit-keyframes push-visual-bounce {
   0%, 100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -301,7 +198,7 @@ body {
             transform: translateY(-8px);
   }
 }
-@keyframes push-bounce {
+@keyframes push-visual-bounce {
   0%, 100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -311,7 +208,7 @@ body {
             transform: translateY(-8px);
   }
 }
-@-webkit-keyframes push-text-fade {
+@-webkit-keyframes push-status-text-fade {
   0%, 100% {
     opacity: 0.6;
   }
@@ -319,7 +216,7 @@ body {
     opacity: 1;
   }
 }
-@keyframes push-text-fade {
+@keyframes push-status-text-fade {
   0%, 100% {
     opacity: 0.6;
   }
@@ -327,6 +224,25 @@ body {
     opacity: 1;
   }
 }
+.qr-code {
+  width: 60%;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+.qpin {
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.qpin__value {
+  font-size: 1.5rem;
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, "Courier New", monospace;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #667eea;
+}
+
 .content-card {
   --content-card-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 2rem 1.5rem;
