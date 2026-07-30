@@ -30,19 +30,14 @@ body {
 }
 .auth-card__header {
   padding: 1rem;
+  margin-bottom: 1rem;
   background-image: url("../img/curve-top.svg"), url("../img/bg.png"), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #ffffff;
-  height: 130px;
+  height: 120px;
   background-repeat: no-repeat;
   background-position: center bottom, right top, center;
-  background-size: 114% auto, 150% auto, cover;
+  background-size: 100% auto, 150% auto, cover;
   background-blend-mode: normal, color-burn, normal;
-}
-@media (min-width: 768px) {
-  .auth-card__header {
-    background-position: center calc(100% + 16px), right top, center;
-    background-size: 120% auto, 150% auto, cover;
-  }
 }
 .auth-card__heading {
   line-height: 1.25;
@@ -68,18 +63,12 @@ body {
   padding-top: 0.5rem;
 }
 .auth-card__footer {
-  height: 74px;
+  height: 60px;
   background-image: url("../img/curve-bottom.svg"), url("../img/bg.png"), linear-gradient(135deg, #667eea, #764ba2);
   background-repeat: no-repeat;
-  background-position: center calc(100% - 10px), right bottom, center;
-  background-size: 136% auto, cover, cover;
+  background-position: center top, right bottom, center;
+  background-size: 100% auto, cover, cover;
   background-blend-mode: normal, color-burn, normal;
-}
-@media (min-width: 768px) {
-  .auth-card__footer {
-    background-position: center calc(100% - 4px), right bottom, center;
-    background-size: 136% auto, cover, cover;
-  }
 }
 
 .login__back {
