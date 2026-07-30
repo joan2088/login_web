@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layout_3.css">
@@ -21,10 +22,24 @@
             </h1> -->
         </header>
         <div class="auth-card__body">
-            <form action="login_card_step2.html">                
+            <form action="#">                
                 <h2 class="auth-card__title">選擇登入方式
                     <span class="auth-card__title-en">Sign-In Method</span>
                 </h2>
+                <div class="notice notice--warn mb-16">
+                    <p class="notice__text">
+                        登入視窗即將逾時，請儘快完成
+                        <span class="notice__text-en">This sign-in window is about to expire</span>
+                    </p>                                
+                </div>
+                <div class="notice-secondary notice-secondary--warn">
+                    <p class="notice-secondary__text">
+                        登入視窗即將逾時，請儘快完成
+                        <span class="notice-secondary__text-en">
+                            This sign-in window is about to expire
+                        </span>
+                    </p>
+                </div>
                 <div class="notice notice--error mb-16">
                     <p class="notice__text">
                         請重新驗證身分以繼續
@@ -39,7 +54,133 @@
                 <a class="btn btn--secondary mt-16" href="javascript:;">使用其他帳號 Use another username</a>
                 <div class="divider"><span class="divider__text">OR</span></div>
                 <a class="btn btn--secondary mb-16" href="#">Academia Sinica SSO</a>
-                <a class="btn btn--secondary" href="#">行動自然人憑證</a>                
+                <a class="btn btn--secondary" href="#">行動自然人憑證</a> 
+                <div class="account-summary"><i class="fa-solid fa-circle-user account-summary__icon"></i>my-account000</div>
+                <div class="my-24">
+                    <a class="btn btn--secondary mb-16" href="login_card_step3.html">FIDO Key</a>  
+                    <a class="btn btn--secondary mb-16" href="login_card_step3.html">Push</a>
+                    <a class="btn btn--secondary mb-16" href="login_card_step3.html">QR Code</a>
+                    <a class="btn btn--secondary mb-16" href="login_card_step3.html">Password</a>
+                    <a class="btn btn--secondary" href="login_card_step3.html">Password + OTP</a>                             
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="trust-device" name="trust-device" value="true">
+                    <label for="trust-device" class="form-checkbox__text">信任此裝置<span class="form-checkbox__text-en">Trust this device</span></label>
+                </div>                        
+                <div class="text-center mt-32">
+                    <a class="link" href="login_card_step1.html">使用其他帳號 Use another username</a>
+                </div> 
+                <div class="account-summary"><i class="fa-solid fa-circle-user account-summary__icon"></i>my-account000</div>
+                <div class="my-24">
+                    <ol class="steps">
+                        <li class="steps__item">請至手機確認推播通知<span class="steps__item-en">Check your phone.</span></li>
+                        <li class="steps__item">開啟 IDExpert App<span class="steps__item-en">Open IDExpert.</span></li>
+                        <li class="steps__item">依 App 指示完成驗證<span class="steps__item-en">Follow the app instructions.</span></li>
+                    </ol>                                
+                    <div class="push-status">
+                        <div class="push-visual">
+                            <div class="push-visual__ring"></div>
+                            <div class="push-visual__ring push-visual__ring--delay"></div>
+                            <i class="fa-solid fa-mobile-screen-button push-visual__icon"></i>
+                        </div>
+                        <p class="push-status__text">
+                            等待手機驗證中...
+                            <span class="push-status__text-en">Waiting for verification...</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- IDEXPERT_QRCODE -->                            
+                <div class="my-24">
+                    <img src="img/qr_code.png" alt="QR Code" class="qr-code">
+                    <p class="qpin">QPin: <span class="qpin__value">1688</span></p>
+                    <ol class="steps">
+                        <li class="steps__item">開啟手機相機或 IDExpert APP<span class="steps__item-en">Open camera or IDExpert App.</span></li>
+                        <li class="steps__item">掃描上方 QR Code<span class="steps__item-en">Scan the QR Code above.</span></li>
+                        <li class="steps__item">依 App 指示完成驗證<span class="steps__item-en">Follow the app instructions.</span></li>
+                        <li class="steps__item">無法掃描？輸入 QPin 登入<span class="steps__item-en">Can't scan? Enter QPin to sign in</span></li>
+                    </ol>
+                </div> 
+                <div>
+                    <button class="btn btn--primary" type="submit">不代理，直接登入 Continue without proxy</button>
+                    <div class="divider"><span class="divider__text">OR</span></div>                    
+                    <div class="form-field">
+                        <span class="form-label">被代理對象 Subject</span>
+                        <div class="form-radio-group">
+                            <div class="form-radio">
+                                <input id="has-account" name="proxy-subject" type="radio" value="account" />
+                                <label for="has-account" class="form-radio__text">已有帳號
+                                    <span class="form-radio__text-en">Has Account</span>
+                                </label>
+                            </div>
+                            <div class="form-radio">
+                                <input id="no-account" name="proxy-subject" type="radio" value="personnel" />
+                                <label for="no-account" class="form-radio__text">無帳號者<span class="form-radio__text-en">No Account</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="subject-account">帳號 Username</label>
+                        <input id="subject-account" class="form-input" type="text" autocomplete="username" />
+                        <!-- 輸入帳號時會去後端查找人員資料，並顯示對應的資訊：姓名(帳號)或是查無此人 -->
+                        <div class="notice notice--success">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <p class="notice__text">江胖胖（my-account）</p>
+                        </div>
+                        <div class="notice notice--info">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <p class="notice__text">江胖胖（my-account）</p>
+                        </div>
+                        <div class="notice notice--warn">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <p class="notice__text">人事系統查無此人 / Personnel: subject not found</p>
+                        </div>
+                        <div class="notice notice--error">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <p class="notice__text">人事系統查無此人
+                                <span class="notice__text-en">Personnel: subject not found</span>
+                            </p>
+                        </div>
+                    </div> 
+                    <div class="form-field">
+                        <label class="form-label" for="org-unit-id">所別代碼 OrgUnit ID</label>
+                        <input id="org-unit-id" class="form-input" type="text" autocomplete="username" />
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="keyword">關鍵字 Keyword</label>
+                        <div class="search-group">
+                            <input id="keyword" class="form-input search-group__input" type="text" autocomplete="username" />
+                            <!-- <button class="btn btn--tertiary" type="submit">搜尋 Search</button> -->
+                            <button class="btn btn--quaternary search-group__btn" type="submit">搜尋 Search</button>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="Select-subject">被冒名對象 Select subject</label>
+                        <select id="Select-subject" class="form-input">
+                            <option value="1">請選擇 Select</option>
+                            <option value="2">王胖胖</option>
+                            <option value="3">江小胖</option>
+                            <option value="4">星中胖</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="quick-pick">快速範本 Quick-pick</label>
+                        <select id="quick-pick" class="form-input">
+                            <option value="1">自訂理由（自行輸入） Custom</option>
+                            <option value="2">重現工單 Reproduce ticket</option>
+                            <option value="3">驗證權限指派 Verify perm assignment</option>
+                            <option value="4">驗證屬性對應 Verify attribute mapping</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <span class="form-label">登入單位 Organizational Unit</span>
+                        <p class="form-static">所別 ID：37</p>
+                    </div>                            
+                    <div class="form-field">
+                        <label class="form-label" for="proxy-reason">代理理由（至少 10 字）Reason (≥ 10 chars)</label>
+                        <textarea id="proxy-reason" cols="40" rows="3" class="form-input"></textarea>
+                    </div>                          
+                    <button class="btn btn--primary" type="submit">確認啟動 Confirm &amp; Start</button>                            
+                </div>             
             </form>
         </div>
         <div class="auth-card__footer"></div>
