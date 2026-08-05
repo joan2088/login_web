@@ -32,26 +32,53 @@
                         <span class="notice__text-en">This sign-in window is about to expire</span>
                     </p>                                
                 </div>
-                <div class="notice-secondary notice-secondary--warn">
-                    <p class="notice-secondary__text">
+                <div class="notice notice--accent notice--warn my-16">
+                    <p class="notice__text">
                         登入視窗即將逾時，請儘快完成
-                        <span class="notice-secondary__text-en">
+                        <span class="notice__text-en">
                             This sign-in window is about to expire
                         </span>
                     </p>
                 </div>
-                <div class="notice notice--error mb-16">
+                <div class="notice notice--error my-16">
                     <p class="notice__text">
                         請重新驗證身分以繼續
                         <span class="notice__text-en">Please re-authenticate to continue</span>
                     </p>
                 </div>
-                <div class="notice-secondary notice-secondary--error mb-16">
-                    <p class="notice-secondary__text">
+                <div class="notice notice--accent notice--error mb-16">
+                    <p class="notice__text">
                         請重新驗證身分以繼續
-                        <span class="notice-secondary__text-en">Please re-authenticate to continue</span>
+                        <span class="notice__text-en">Please re-authenticate to continue</span>
                     </p>
                 </div>
+                <div class="notice notice--accent notice--success mb-16">
+                    <p class="notice__text">
+                        驗證碼已寄至您的手機，請於 10 分鐘內輸入識別碼 <strong class="code-text">TEXT</strong> 後方的 6 位數驗證碼。                
+                        <span class="notice__text-en">
+                            A verification code has been sent to your mobile.
+                            Please enter the six-digit code following identifier <strong class="code-text">TEXT</strong> within 10 minutes.                    
+                        </span>
+                    </p>
+                </div>
+                <div class="notice notice--accent notice--info mb-16">
+                    <p class="notice__text">
+                        驗證碼已寄至您的手機，請於 10 分鐘內輸入識別碼 <strong class="code-text">TEXT</strong> 後方的 6 位數驗證碼。                
+                        <span class="notice__text-en">
+                            A verification code has been sent to your mobile.
+                            Please enter the six-digit code following identifier <strong class="code-text">TEXT</strong> within 10 minutes.                    
+                        </span>
+                    </p>
+                </div>
+                <div class="notice notice--info">
+                    <p class="notice__text">
+                        驗證碼已寄至您的手機，請於 10 分鐘內輸入識別碼 <strong class="code-text">TEXT</strong> 後方的 6 位數驗證碼。                
+                        <span class="notice__text-en">
+                            A verification code has been sent to your mobile.
+                            Please enter the six-digit code following identifier <strong class="code-text">TEXT</strong> within 10 minutes.                    
+                        </span>
+                    </p>
+                </div>  
                 <div class="form-field">
                     <label class="form-label" for="username">帳號 Username</label>
                     <input name="username" class="form-input" type="text" autocomplete="username" />
@@ -67,15 +94,21 @@
                     <a class="btn btn--secondary mb-16" href="login_card_step3.html">Push</a>
                     <a class="btn btn--secondary mb-16" href="login_card_step3.html">QR Code</a>
                     <a class="btn btn--secondary mb-16" href="login_card_step3.html">Password</a>
-                    <a class="btn btn--secondary" href="login_card_step3.html">Password + OTP</a>                             
+                    <a class="btn btn--secondary" href="login_card_step3.html">Password + OTP</a>
+                    <a href="#" class="btn btn--secondary mb-16" target="_blank">通行碼＋OTP（尚未註冊，前往註冊 Register）</a>
+                    <span class="btn btn--secondary mb-16">通行碼＋OTP（尚未註冊 Not enrolled）</span> 
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="trust-device" name="trust-device" value="true">
+                        <label for="trust-device" class="form-checkbox__text">信任此裝置<span class="form-checkbox__text-en">Trust this device</span></label>
+                    </div>                            
                 </div>
-                <div class="form-checkbox">
-                    <input type="checkbox" id="trust-device" name="trust-device" value="true">
-                    <label for="trust-device" class="form-checkbox__text">信任此裝置<span class="form-checkbox__text-en">Trust this device</span></label>
-                </div>                        
-                <div class="text-center mt-32">
-                    <a class="link" href="login_card_step1.html">使用其他帳號 Use another username</a>
-                </div> 
+                 
+                <div class="text-center">
+                    <a class="btn btn--link" href="login_card_step1.html">其他登入方式 Other sign-in methods</a>
+                </div>
+                <button class="btn btn--primary mb-16" type="submit">繼續 Continue</button>
+                <a class="btn btn--secondary mb-16" href="login_card_step1.html">其他登入方式 Other sign-in methods</a>
+                <a class="btn btn--secondary" href="login_card_step1.html">使用其他帳號 Use another username</a>
                 <div class="account-summary"><i class="fa-solid fa-circle-user account-summary__icon"></i>my-account000</div>
                 <div class="my-24">
                     <ol class="steps">
@@ -98,14 +131,17 @@
                 <!-- IDEXPERT_QRCODE -->                            
                 <div class="my-24">
                     <img src="img/qr_code.png" alt="QR Code" class="qr-code">
-                    <p class="qpin">QPin: <span class="qpin__value">1688</span></p>
+                    <a href="#"><img src="img/qr_code.png" alt="QR Code" class="qr-code"></a>
+                    <p class="qpin">QPin: <strong class="qpin__value code-text">1688</strong></p>
                     <ol class="steps">
                         <li class="steps__item">開啟手機相機或 IDExpert APP<span class="steps__item-en">Open camera or IDExpert App.</span></li>
                         <li class="steps__item">掃描上方 QR Code<span class="steps__item-en">Scan the QR Code above.</span></li>
                         <li class="steps__item">依 App 指示完成驗證<span class="steps__item-en">Follow the app instructions.</span></li>
                         <li class="steps__item">無法掃描？輸入 QPin 登入<span class="steps__item-en">Can't scan? Enter QPin to sign in</span></li>
                     </ol>
-                </div> 
+                </div>
+                <button class="btn btn--primary" type="submit">重新推播 Resend push</button>
+                <a class="btn btn--secondary mt-16" href="javascript:;">其他登入方式 Other sign-in methods</a> 
                 <div>
                     <button class="btn btn--primary" type="submit">不代理，直接登入 Continue without proxy</button>
                     <div class="divider"><span class="divider__text">OR</span></div>                    
@@ -185,12 +221,17 @@
                         <label class="form-label" for="proxy-reason">代理理由（至少 10 字）Reason (≥ 10 chars)</label>
                         <textarea id="proxy-reason" cols="40" rows="3" class="form-input"></textarea>
                     </div>                          
-                    <button class="btn btn--primary" type="submit">確認啟動 Confirm &amp; Start</button>                            
-                </div>             
+                    <button class="btn btn--primary" type="submit">確認啟動 Confirm &amp; Start</button>                                             
+                </div>  
             </form>
         </div>
-        <div class="auth-card__footer"></div>
+        <div class="auth-card__footer">
+            <!-- <p class="auth-card__copyright">2026 © 中央研究院 資訊科學研究所</p> -->
+        </div>
     </div>
+    <footer class="page-footer">
+        <p class="page-footer__copyright">2026 © 中央研究院 資訊科學研究所</p>
+    </footer>
     <div class="content-card content-card--danger">
         <div class="content-card__icon" aria-hidden="true">
             <i class="fa-solid fa-lock"></i>
@@ -245,6 +286,25 @@
             </p>
         </div>
     </div>
+    <div class="content-card content-card--info">
+        <div class="content-card__icon" aria-hidden="true">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+        <h1 class="content-card__title">
+            登出
+            <span class="content-card__title-en">Logout</span>
+        </h1>
+        <div class="content-card__divider" aria-hidden="true"></div>
+        <div class="content-card__body">
+            <p class="content-card__desc">
+                您已成功登出。
+                <span class="content-card__desc-en">You have been signed out.</span>
+            </p>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <p class="page-footer__copyright">2026 © 中央研究院 資訊科學研究所</p>
+    </footer>
 </body>
 
 </html>
